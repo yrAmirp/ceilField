@@ -1,0 +1,66 @@
+body {
+  min-height: 100vh;
+  background-color: #c5c5c5;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 20px;
+}
+.field {
+}
+.container {
+  max-width: 80vw;
+  margin: 0 auto;
+}
+.flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.field table {
+  /* height: 100%;
+  width: 100%; */
+  text-align: center;
+  padding: 30px;
+}
+.field table td {
+  vertical-align: middle;
+  padding: 10px;
+  border: 1px solid #000;
+  width: 6vmax;
+  height: 6vmax;
+  font-size: 0;
+}
+.deadCeil {
+  background-color: rgb(187, 44, 44);
+  background-image: url(../img/icons8-триллер-50.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.aliveCeil {
+  background-color: rgb(35, 156, 51);
+  background-image: url(../img/icons8-улыбка-50.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.appearance {
+  animation: appearance 0.8s ease, appearance 1s ease 1s reverse;
+}
+
+@keyframes appearance {
+  from {
+    opacity: 0.2;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes disappearance {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.2;
+  }
+}
