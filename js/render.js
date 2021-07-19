@@ -1,16 +1,14 @@
 "use strict";
 
-import * as field from "./field.js";
-
 const container = document.querySelector("#container");
-let startField = field.generateField(10, 10);
+let startField = generateField(15, 15);
 
 updateTable(startField);
 
 function updateTable(arr) {
   showTable(arr);
   let prevField = JSON.parse(JSON.stringify(arr));
-  let refreshField = field.updateCeilsState(arr);
+  let refreshField = updateCeilsState(arr);
   if (JSON.stringify(refreshField) === JSON.stringify(prevField)) {
     return;
   } else {
@@ -27,6 +25,7 @@ function fillTable(table, arr) {
     for (let j = 0; j < arr[i].length; j++) {
       let td = document.createElement("td");
       td.textContent = arr[i][j];
+
       deadOrAlive(td);
       tr.append(td);
     }
@@ -50,5 +49,3 @@ function deadOrAlive(td) {
     td.classList.add("deadCeil");
   }
 }
-
-export { showTable };

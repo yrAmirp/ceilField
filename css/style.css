@@ -7,7 +7,7 @@ body {
 .field {
 }
 .container {
-  max-width: 80vw;
+  max-width: 80vmax;
   margin: 0 auto;
 }
 .flex-container {
@@ -19,15 +19,16 @@ body {
   /* height: 100%;
   width: 100%; */
   text-align: center;
-  padding: 30px;
+  padding: 3vmin;
 }
 .field table td {
   vertical-align: middle;
-  padding: 10px;
   border: 1px solid #000;
-  width: 6vmax;
-  height: 6vmax;
-  font-size: 0;
+  min-width: 5vmax;
+  width: 5vmax;
+  height: 5vmax;
+  font-size: 0px;
+  word-break: break-all;
 }
 .deadCeil {
   background-color: rgb(187, 44, 44);

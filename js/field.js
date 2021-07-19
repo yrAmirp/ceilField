@@ -1,5 +1,4 @@
 "use strict";
-import * as render from "./render.js";
 
 function generateField(M, N) {
   const field = [];
@@ -108,5 +107,3 @@ function updateField(field) {
     }, 2000);
   }
 }
-
-export { generateField, updateCeilsState, updateField };
