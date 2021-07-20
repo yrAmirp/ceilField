@@ -1,20 +1,31 @@
 "use strict";
 
 const container = document.querySelector("#container");
-let startField = generateField(15, 15);
-
-updateTable(startField);
+let stopUpdate = false;
 
 function updateTable(arr) {
+  console.log(stopUpdate);
+
   showTable(arr);
   let prevField = JSON.parse(JSON.stringify(arr));
   let refreshField = updateCeilsState(arr);
-  if (JSON.stringify(refreshField) === JSON.stringify(prevField)) {
+  if (stopUpdate) {
+    setTimeout(() => {
+      stopUpdate = !stopUpdate;
+    }, 1000);
     return;
-  } else {
-    console.table(refreshField);
-    setTimeout(function () {
-      updateTable(refreshField);
+  }
+  if (JSON.stringify(refreshField) === JSON.stringify(prevField)) {
+    refreshBtnState(btnStart);
+    stopUpdate = !stopUpdate;
+    return;
+  } else if (!stopUpdate) {
+    let timeoutID = setTimeout(function () {
+      if (!stopUpdate) {
+        updateTable(refreshField);
+      } else {
+        clearTimeout(timeoutID);
+      }
     }, 2000);
   }
 }
@@ -31,7 +42,6 @@ function fillTable(table, arr) {
     }
     table.append(tr);
   }
-  console.log(table);
 }
 
 function showTable(arr) {

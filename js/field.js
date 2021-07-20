@@ -1,6 +1,6 @@
 "use strict";
 
-function generateField(M, N) {
+function generateField(M = 3, N = 3) {
   const field = [];
   for (let i = 0; i < N; i++) {
     field.push([]);
@@ -8,7 +8,7 @@ function generateField(M, N) {
       field[i][j] = Math.round(Math.random());
     }
   }
-  console.table(field);
+
   return field;
 }
 
@@ -94,16 +94,15 @@ function updateCeilsState(fieldCeils) {
   }
 }
 
-function updateField(field) {
-  let prevField = JSON.parse(JSON.stringify(field));
-  let refreshField = updateCeilsState(field);
-  let count = 1;
-  if (JSON.stringify(refreshField) === JSON.stringify(prevField)) {
-    return;
-  } else {
-    console.table(refreshField);
-    setTimeout(function () {
-      updateField(refreshField);
-    }, 2000);
-  }
-}
+// function updateField(field) {
+//   let prevField = JSON.parse(JSON.stringify(field));
+//   let refreshField = updateCeilsState(field);
+//   let count = 1;
+//   if (JSON.stringify(refreshField) === JSON.stringify(prevField)) {
+//     return;
+//   } else {
+//     setTimeout(function () {
+//       updateField(refreshField);
+//     }, 2000);
+//   }
+// }

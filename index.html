@@ -12,9 +12,74 @@
     <div class="field">
       <div class="container">
         <div class="flex-container" id="container"></div>
+        <div class="settings">
+          <div class="settings__text">Размеры поля</div>
+          <div class="number-container">
+            <div class="number">
+              <button
+                class="number-minus"
+                type="button"
+                onclick="this.nextElementSibling.stepDown(); this.nextElementSibling.onchange();"
+              >
+                -
+              </button>
+              <input
+                type="number"
+                name="fieldSizeX"
+                id="fieldSizeX"
+                class="fieldSize"
+                step="1"
+                min="3"
+                value="5"
+                placeholder="Ширина"
+                required
+              />
+              <button
+                class="number-plus"
+                type="button"
+                onclick="this.previousElementSibling.stepUp(); this.previousElementSibling.onchange();"
+              >
+                +
+              </button>
+            </div>
+
+            <div class="number">
+              <button
+                class="number-minus"
+                type="button"
+                onclick="this.nextElementSibling.stepDown(); this.nextElementSibling.onchange();"
+              >
+                -
+              </button>
+              <input
+                type="number"
+                name="fieldSizeY"
+                id="fieldSizeY"
+                class="fieldSize"
+                step="1"
+                min="3"
+                value="5"
+                placeholder="Высота"
+                required
+              />
+              <button
+                class="number-plus"
+                type="button"
+                onclick="this.previousElementSibling.stepUp(); this.previousElementSibling.onchange();"
+              >
+                +
+              </button>
+            </div>
+          </div>
+
+          <div class="settings-btn">
+            <button class="btn-start btn-sett">Запустить</button>
+          </div>
+        </div>
       </div>
     </div>
     <script src="js/field.js"></script>
     <script src="js/render.js"></script>
+    <script src="js/control.js"></script>
   </body>
 </html>
