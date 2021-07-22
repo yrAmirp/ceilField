@@ -26,6 +26,7 @@ function refreshBtnState(btn) {
     setTimeout(() => {
       btn.disabled = false;
     }, 2000);
+
     startField();
   } else if (btn.state === "STOP") {
     btn.disabled = true;
@@ -40,9 +41,25 @@ function btnStartHandler() {
 }
 function startField() {
   stopUpdate = false;
-  let generatedField = generateField(inputFieldX.value, inputFieldY.value);
+
+  let generatedField = generateField(
+    inputFieldX.value == 0 ? 3 : inputFieldX.value,
+    inputFieldY.value == 0 ? 3 : inputFieldY.value
+  );
   updateTable(generatedField);
 }
 function stopField() {
   stopUpdate = true;
+}
+
+function checkValid() {
+  if (
+    inputFieldX.value < 3 ||
+    inputFieldX.value > 50 ||
+    inputFieldY.value < 3 ||
+    inputFieldY.value > 50
+  ) {
+    alert("Пожалуйста, введите значения в диапазоне [3 - 50]");
+    return false;
+  } else return true;
 }

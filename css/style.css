@@ -63,6 +63,7 @@ body {
 }
 .settings__text {
   margin-bottom: 10px;
+  text-align: center;
 }
 .fieldSize {
   font-size: 24px;

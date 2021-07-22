@@ -4,8 +4,6 @@ const container = document.querySelector("#container");
 let stopUpdate = false;
 
 function updateTable(arr) {
-  console.log(stopUpdate);
-
   showTable(arr);
   let prevField = JSON.parse(JSON.stringify(arr));
   let refreshField = updateCeilsState(arr);
